@@ -1,5 +1,5 @@
 # Modern LSM-Tree
-This repository contains a modern C++ implementation of the LSM-Tree KVStore, one of the assignment for the <i>Advanced Data Structures (2021Spring) </i> course at the School of Software, Shanghai Jiao Tong University.
+This repository contains a modern C++ implementation of the LSM-Tree KVStore, one of the assignment for the <i>Advanced Data Structures (2021Spring) </i> course at the School of Software, Shanghai Jiao Tong University(SE-SJTU).
 ## This implementation attempt to:
  - Achieve a high degree of scalability through template methods and polymorphism methods;
  - Prevent memory leaks and access to null pointers through smart pointers;
