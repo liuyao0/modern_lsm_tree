@@ -1,0 +1,28 @@
+{
+    "version": 3,
+    "configurePresets": [
+      {
+        "name": "mingw",
+        "displayName": "MinGW with C++23",
+        "generator": "MinGW Makefiles", 
+        "cacheVariables": {
+          "CMAKE_CXX_STANDARD": "23",    
+          "CMAKE_CXX_EXTENSIONS": "OFF", 
+          "CMAKE_MAKE_PROGRAM": "mingw32-make.exe" 
+        },
+        "environment": {
+          "CC": "gcc",   
+          "CXX": "g++"
+        }
+      },
+      {
+        "name": "ninja",
+        "displayName": "ninja with C++23",
+        "generator": "Ninja",
+        "cacheVariables": {
+          "CMAKE_CXX_STANDARD": "23",
+          "CMAKE_MAKE_PROGRAM": "ninja.exe"
+        }
+      }
+    ]
+  }
