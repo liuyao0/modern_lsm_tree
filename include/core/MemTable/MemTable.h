@@ -35,7 +35,7 @@ class MemTable {
             return skip_list.get(key);
         }
 
-        int remove(const KType key) {
+        void remove(const KType key) {
             size += skip_list.insert(key, DeleteMarker<VType>::value());
         }
 

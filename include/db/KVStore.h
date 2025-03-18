@@ -5,18 +5,20 @@
 #include "SerializeWrapper.h"
 #include <fstream>
 #include <iostream>
+#include <format>
+
 
 template<typename KType, typename VType>
 class KVStore {
 private:
     uint64_t curr_timestamp;
     uint64_t max_memtable_size;
+    string db_path;
     MemTable<KType, VType> mem_table;
     vector<vector<SSTable<KType, VType>>> sstables;
-    string db_path;
 
 public:
-    KVStore(const string& db_path_): curr_timestamp(0), max_memtable_size(8), db_path(db_path_), sstables(1) {}
+    KVStore(const string& db_path_): curr_timestamp(0), max_memtable_size(8), db_path(db_path_), mem_table(), sstables(1) {}
 
     void put(const KType key, const VType value) {
         if(mem_table.get(key) != nullptr)
@@ -81,12 +83,12 @@ public:
 
     unique_ptr<VType> get(const KType key) {
         unique_ptr<VType> val_ptr = mem_table.get(key);
-        if(val_ptr)
+        if(val_ptr){
             if(*val_ptr == DeleteMarker<VType>::value())
                 return nullptr;
             else
                 return val_ptr;
-        
+        }
         uint64_t max_timestamp = 0;
         string value_str;
         bool find_in_sstable = false;
@@ -125,12 +127,13 @@ public:
                     }
                 }
             }
-        if(find_in_sstable)
+        if(find_in_sstable) {
             if(DeleteMarker<VType>::isDeleted(SerializeWrapper<VType>::deserialize(value_str)))
                 return nullptr;
             else
                 return make_unique<VType>(SerializeWrapper<VType>::deserialize(value_str));
-        return nullptr;   
+        }
+        return nullptr;
     }
 
     void del(const KType key) {

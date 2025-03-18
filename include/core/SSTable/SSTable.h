@@ -5,11 +5,11 @@
 
 template<typename KType>
 struct BloomFilter {
-    using HashWrapper = HashWrapper<KType, MurmurHash3<KType>>;
+    using CurrentHashWrapper = HashWrapper<KType, MurmurHash3<KType>>;
 
     uint64_t bit_num;
     vector<bool> bit_array;
-    HashWrapper hash_wrapper;
+    CurrentHashWrapper hash_wrapper;
 
     explicit BloomFilter(uint64_t bit_num_ = 81920):bit_num(bit_num_),bit_array(bit_num_, false) {}
 
@@ -73,7 +73,7 @@ public:
         ofs.write(reinterpret_cast<const char*>(&header.kv_count), sizeof(header.kv_count));
         ofs.write(reinterpret_cast<const char*>(&header.min_key), sizeof(header.min_key));
         ofs.write(reinterpret_cast<const char*>(&header.max_key), sizeof(header.max_key));
-        for(int i = 0; i < bloom_filter.bit_array.size(); i += sizeof(bool) * 8)
+        for(size_t i = 0; i < bloom_filter.bit_array.size(); i += sizeof(bool) * 8)
         {
             uint8_t byte = 0;
             for(int j = 0; j < 8; j++)
