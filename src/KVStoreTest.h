@@ -45,7 +45,7 @@ public:
 };
 
 
-class Test {
+class KVStoreTest {
 protected:
 	static const std::string not_found;
 
@@ -106,7 +106,7 @@ protected:
 	bool verbose;
 
 public:
-	Test(const std::string &dir, bool v=true): store(dir), verbose(v)
+	KVStoreTest(const std::string &dir, bool v=true): store(dir), verbose(v)
 	{
 		nr_tests = 0;
 		nr_passed_tests = 0;
@@ -120,4 +120,4 @@ public:
 	}
 
 };
-const std::string Test::not_found = "";
+const std::string KVStoreTest::not_found = "";
