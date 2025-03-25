@@ -8,3 +8,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(include)
 add_subdirectory(src)
+add_subdirectory(test)

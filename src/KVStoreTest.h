@@ -54,7 +54,7 @@ protected:
 	uint64_t nr_phases;
 	uint64_t nr_passed_phases;
 
-#define EXPECT(exp, got) expect<decltype(got)>((exp), (got), __FILE__, __LINE__)
+#define KVSTORE_EXPECT(exp, got) expect<decltype(got)>((exp), (got), __FILE__, __LINE__)
 	template<typename T>
 	void expect(const T &exp, const T &got,
 		    const std::string &file, int line)

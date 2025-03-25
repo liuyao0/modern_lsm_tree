@@ -25,7 +25,7 @@ DEFINE_integer bthread_concurrency '18' 'Number of worker pthreads'
 DEFINE_string sync 'true' 'fsync each time'
 DEFINE_string valgrind 'false' 'Run in valgrind'
 DEFINE_integer max_segment_size '8388608' 'Max segment size'
-DEFINE_integer server_num '3' 'Number of servers'
+DEFINE_integer server_num '5' 'Number of servers'
 DEFINE_boolean clean 1 'Remove old "runtime" dir before running'
 DEFINE_integer port 8300 "Port of the first server"
 

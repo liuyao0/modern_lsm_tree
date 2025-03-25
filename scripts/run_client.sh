@@ -22,12 +22,12 @@ if [[ ! -d "$mydir" ]]; then mydir="$PWD"; fi
 
 # define command-line flags
 DEFINE_boolean clean 1 'Remove old "runtime" dir before running'
-DEFINE_integer add_percentage 50 'Percentage of fetch_add operation'
+DEFINE_integer add_percentage 50 'Percentage of put operation'
 DEFINE_integer bthread_concurrency '8' 'Number of worker pthreads'
 DEFINE_integer server_port 8300 "Port of the first server"
-DEFINE_integer server_num '3' 'Number of servers'
-DEFINE_integer thread_num 1 'Number of sending thread'
-DEFINE_string log_each_request 'true' 'Print log for each request'
+DEFINE_integer server_num '5' 'Number of servers'
+DEFINE_integer thread_num 10 'Number of sending thread'
+DEFINE_string log_each_request 'false' 'Print log for each request'
 DEFINE_string valgrind 'false' 'Run in valgrind'
 DEFINE_string use_bthread "true" "Use bthread to send request"
 

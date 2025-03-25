@@ -2,3 +2,6 @@
 build
 .idea
 3rdparty
+cmake-build-debug
+runtime
+.clang-format

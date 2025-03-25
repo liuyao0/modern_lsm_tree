@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 project(lsm_kvstore)
 
-add_executable(correctness correctness.cpp)
-
-target_link_libraries(correctness KVStore)
-
 option(EXAMPLE_LINK_SO "Whether examples are linked dynamically" OFF)
 option(LINK_TCMALLOC "Link tcmalloc if possible" ON)
 
@@ -13,7 +9,7 @@ option(LINK_TCMALLOC "Link tcmalloc if possible" ON)
 #     COMMAND bash -c "find ${CMAKE_SOURCE_DIR}/../.. -type d -path \"*output/include/braft\" | xargs dirname | xargs dirname | tr -d '\n'"
 #     OUTPUT_VARIABLE OUTPUT_PATH
 # )
-#
+
 
 list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty/braft")
 message("CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
@@ -138,3 +134,7 @@ target_link_libraries(kvstore_server
         "-Xlinker \"-(\""
         ${DYNAMIC_LIB}
         "-Xlinker \"-)\"")
+
+add_executable(correctness correctness.cpp)
+
+target_link_libraries(correctness KVStore)

@@ -23,11 +23,11 @@
 
 DEFINE_bool(log_each_request, false, "Print log for each request");
 DEFINE_bool(use_bthread, false, "Use bthread to send requests");
-DEFINE_int32(add_percentage, 100, "Percentage of fetch_add");
-DEFINE_int32(thread_num, 1, "Number of threads sending requests");
+DEFINE_int32(add_percentage, 50, "Percentage of put");
+DEFINE_int32(thread_num, 10, "Number of threads sending requests");
 DEFINE_int32(timeout_ms, 1000, "Timeout for each request");
 DEFINE_string(conf, "", "Configuration of the raft group");
-DEFINE_string(group, "Counter", "Id of the replication group");
+DEFINE_string(group, "KVStore", "Id of the replication group");
 
 bvar::LatencyRecorder g_latency_recorder("counter_client");
 
@@ -76,10 +76,6 @@ static void* sender(void* arg) {
             KVS::GetRequest request;
             request.set_key(key);
             stub.get(&cntl, &request, &response, NULL);
-            if (response.value() == value || response.value() == "")
-            {
-                LOG(INFO) << "Request success";
-            }
         }
         if (cntl.Failed()) {
             LOG(WARNING) << "Fail to send request to " << leader
@@ -100,13 +96,18 @@ static void* sender(void* arg) {
         }
         g_latency_recorder << cntl.latency_us();
         if (FLAGS_log_each_request) {
+            bool ok = (value == response.value() || response.value().length() == 0);
             LOG(INFO) << "Received response from " << leader
                       << " value=" << response.value()
                       << " latency=" << cntl.latency_us();
+            if (!ok)
+            {
+                LOG(ERROR) << "Received error!";
+            }
             bthread_usleep(1000L * 1000L);
         }
     }
-    return NULL;
+    return nullptr;
 }
 
 int main(int argc, char* argv[]) {

@@ -25,15 +25,15 @@
 
 DEFINE_bool(check_term, true, "Check if the leader changed to another term");
 DEFINE_bool(disable_cli, false, "Don't allow raft_cli access this node");
-DEFINE_bool(log_applied_task, false, "Print notice log when a task is applied");
+DEFINE_bool(log_applied_task, true, "Print notice log when a task is applied");
 DEFINE_int32(election_timeout_ms, 5000, 
             "Start election in such milliseconds if disconnect with the leader");
 DEFINE_int32(port, 8100, "Listen port of this peer");
-DEFINE_int32(snapshot_interval, 30, "Interval between each snapshot");
+DEFINE_int32(snapshot_interval, -1, "Interval between each snapshot");
 DEFINE_string(conf, "", "Initial configuration of the replication group");
 DEFINE_string(data_path, "./data", "Path of data stored on");
 DEFINE_string(db_path, "./db", "Path of sstable stored on");
-DEFINE_string(group, "Counter", "Id of the replication group");
+DEFINE_string(group, "KVStore", "Id of the replication group");
 
 
 
@@ -198,7 +198,7 @@ friend class KVStoreClosure;
         task.done = new KVStoreClosure(this, request, response,
                                       done_guard.release());
         if (FLAGS_check_term) {
-            // ABA problem can be avoid if expected_term is set
+            // ABA problem can be avoided if expected_term is set
             task.expected_term = term;
         }
         // Now the task is applied to the group, waiting for the result.
@@ -244,11 +244,11 @@ friend class KVStoreClosure;
                 get_impl(data, request, response);
                 break;
             case OP_PUT:
-                op = "exchange";
+                op = "put";
                 put_impl(data, request, response);
                 break;
             case OP_DEL:
-                op = "cas";
+                op = "del";
                 del_impl(data, request, response);
                 break;
             default:

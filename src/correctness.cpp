@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstdint>
 #include <string>
-#include "test.h"
-class CorrectnessTest : public Test {
+#include "KVStoreTest.h"
+class CorrectnessTest : public KVStoreTest {
 private:
 	const uint64_t SIMPLE_TEST_MAX = 512;
 	const uint64_t LARGE_TEST_MAX = 1024 * 6;
@@ -11,19 +11,19 @@ private:
 	{
 		uint64_t i;
 		// Test a single key
-		EXPECT(not_found, store.get(1));
+		KVSTORE_EXPECT(not_found, store.get(1));
 		store.put(1, "SE");
-		EXPECT("SE", store.get(1));
-		EXPECT(true, store.del(1));
-		EXPECT(not_found, store.get(1));
-		EXPECT(false, store.del(1));
+		KVSTORE_EXPECT("SE", store.get(1));
+		KVSTORE_EXPECT(true, store.del(1));
+		KVSTORE_EXPECT(not_found, store.get(1));
+		KVSTORE_EXPECT(false, store.del(1));
 
 		phase();
 
 		// Test multiple key-value pairs
 		for (i = 0; i < max; ++i) {
 			store.put(i, std::string(i+1, 's'));
-			EXPECT(std::string(i+1, 's'), store.get(i));
+			KVSTORE_EXPECT(std::string(i+1, 's'), store.get(i));
 		}
 		phase();
 
@@ -31,8 +31,8 @@ private:
 		// Test after all insertions
 		for (i = 0; i < max; ++i)
 		{
-			EXPECT(std::string(i+1, 's'), store.get(i));
-		}	
+			KVSTORE_EXPECT(std::string(i+1, 's'), store.get(i));
+		}
 		phase();
 
 		// Test deletions
@@ -41,17 +41,17 @@ private:
 			if(i&1)
 				store.put(i,std::string(i+1,'t'));
 			else
-				EXPECT(true, store.del(i));
+				KVSTORE_EXPECT(true, store.del(i));
 			//  if(std::string(2955, 's')!=store.get(2954))
 			// 	 	std::cout<<"!!!!"<<std::endl;
 		}
 
 		for (i = 0; i < max; ++i)
-			EXPECT((i & 1) ? std::string(i+1, 't') : not_found,
+			KVSTORE_EXPECT((i & 1) ? std::string(i+1, 't') : not_found,
 			       store.get(i));
 
 		for (i = 1; i < max; ++i)
-			EXPECT(i & 1, store.del(i));
+			KVSTORE_EXPECT(i & 1, store.del(i));
 
 		phase();
 
@@ -59,7 +59,7 @@ private:
 	}
 
 public:
-	CorrectnessTest(const std::string &dir, bool v=true) : Test(dir, v)
+	CorrectnessTest(const std::string &dir, bool v=true) : KVStoreTest(dir, v)
 	{
 	}
 

@@ -7,18 +7,17 @@ int main()
 {
     KVStore<uint64_t, std::string> kv_store("./db");
 
-    for(int i = 0; i < 33; i++)
+    for(int i = 0; i < 2020;i++)
     {
         if(i % 2 == 0)
-            kv_store.put(i, string(i, 's'));
+            kv_store.put(i, std::to_string(i));
     }
 
-    for(int i = 0; i < 33; i++)
+    for(int i = 0; i < 2048; i++)
     {
-        auto val_ptr = kv_store.get(i);
-        if(val_ptr) {
+      if(auto val_ptr = kv_store.get(i)) {
             std::cout << std::format("key: {}, value: {}\n", i, *val_ptr) << std::endl;
-            if(*val_ptr == string(i, 's'))
+            if(*val_ptr == std::to_string(i))
                 std::cout << "correct" << std::endl;
         }
         else
