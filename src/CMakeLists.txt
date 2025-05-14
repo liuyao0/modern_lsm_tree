@@ -137,4 +137,4 @@ target_link_libraries(kvstore_server
 
 add_executable(correctness correctness.cpp)
 
-target_link_libraries(correctness KVStore)
+target_link_libraries(correctness KVStore Threads::Threads)

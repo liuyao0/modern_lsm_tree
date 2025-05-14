@@ -6,8 +6,7 @@ project(lsm_kvstore)
 
 add_executable(test1 test1.cpp)
 
-
-target_link_libraries(test1 KVStore)
+target_link_libraries(test1 KVStore Threads::Threads)
 
 
 

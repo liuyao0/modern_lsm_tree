@@ -5,301 +5,351 @@
 
 #include <algorithm>
 
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
+// This is a temporary google only hack
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+#include "third_party/protobuf/version.h"
+#endif
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
+
 namespace KVS {
 class GetRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetRequest> _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<GetRequest>
+      _instance;
 } _GetRequest_default_instance_;
 class PutRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PutRequest> _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<PutRequest>
+      _instance;
 } _PutRequest_default_instance_;
 class DelRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DelRequest> _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<DelRequest>
+      _instance;
 } _DelRequest_default_instance_;
 class KVStoreResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KVStoreResponse> _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<KVStoreResponse>
+      _instance;
 } _KVStoreResponse_default_instance_;
 }  // namespace KVS
-static void InitDefaultsscc_info_DelRequest_kvstore_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::KVS::_DelRequest_default_instance_;
-    new (ptr) ::KVS::DelRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::KVS::DelRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DelRequest_kvstore_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DelRequest_kvstore_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetRequest_kvstore_2eproto() {
+namespace protobuf_kvstore_2eproto {
+static void InitDefaultsGetRequest() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::KVS::_GetRequest_default_instance_;
     new (ptr) ::KVS::GetRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
   ::KVS::GetRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetRequest_kvstore_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetRequest_kvstore_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_GetRequest =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGetRequest}, {}};
 
-static void InitDefaultsscc_info_KVStoreResponse_kvstore_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::KVS::_KVStoreResponse_default_instance_;
-    new (ptr) ::KVS::KVStoreResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::KVS::KVStoreResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KVStoreResponse_kvstore_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_KVStoreResponse_kvstore_2eproto}, {}};
-
-static void InitDefaultsscc_info_PutRequest_kvstore_2eproto() {
+static void InitDefaultsPutRequest() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::KVS::_PutRequest_default_instance_;
     new (ptr) ::KVS::PutRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
   ::KVS::PutRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PutRequest_kvstore_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PutRequest_kvstore_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_PutRequest =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPutRequest}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_kvstore_2eproto[4];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_kvstore_2eproto = nullptr;
-static const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* file_level_service_descriptors_kvstore_2eproto[1];
+static void InitDefaultsDelRequest() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_kvstore_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::KVS::GetRequest, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::KVS::GetRequest, _internal_metadata_),
+  {
+    void* ptr = &::KVS::_DelRequest_default_instance_;
+    new (ptr) ::KVS::DelRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::KVS::DelRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_DelRequest =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDelRequest}, {}};
+
+static void InitDefaultsKVStoreResponse() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::KVS::_KVStoreResponse_default_instance_;
+    new (ptr) ::KVS::KVStoreResponse();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::KVS::KVStoreResponse::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_KVStoreResponse =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsKVStoreResponse}, {}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_GetRequest.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PutRequest.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DelRequest.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_KVStoreResponse.base);
+}
+
+::google::protobuf::Metadata file_level_metadata[4];
+const ::google::protobuf::ServiceDescriptor* file_level_service_descriptors[1];
+
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::GetRequest, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::GetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::KVS::GetRequest, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::GetRequest, key_),
   0,
-  PROTOBUF_FIELD_OFFSET(::KVS::PutRequest, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::KVS::PutRequest, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::PutRequest, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::PutRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::KVS::PutRequest, key_),
-  PROTOBUF_FIELD_OFFSET(::KVS::PutRequest, value_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::PutRequest, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::PutRequest, value_),
   1,
   0,
-  PROTOBUF_FIELD_OFFSET(::KVS::DelRequest, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::KVS::DelRequest, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::DelRequest, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::DelRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::KVS::DelRequest, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::DelRequest, key_),
   0,
-  PROTOBUF_FIELD_OFFSET(::KVS::KVStoreResponse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::KVS::KVStoreResponse, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::KVStoreResponse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::KVStoreResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::KVS::KVStoreResponse, success_),
-  PROTOBUF_FIELD_OFFSET(::KVS::KVStoreResponse, key_),
-  PROTOBUF_FIELD_OFFSET(::KVS::KVStoreResponse, value_),
-  PROTOBUF_FIELD_OFFSET(::KVS::KVStoreResponse, redirect_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::KVStoreResponse, success_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::KVStoreResponse, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::KVStoreResponse, value_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::KVS::KVStoreResponse, redirect_),
   3,
   2,
   0,
   1,
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 6, sizeof(::KVS::GetRequest)},
   { 7, 14, sizeof(::KVS::PutRequest)},
   { 16, 22, sizeof(::KVS::DelRequest)},
   { 23, 32, sizeof(::KVS::KVStoreResponse)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::KVS::_GetRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::KVS::_PutRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::KVS::_DelRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::KVS::_KVStoreResponse_default_instance_),
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::KVS::_GetRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::KVS::_PutRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::KVS::_DelRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::KVS::_KVStoreResponse_default_instance_),
 };
 
-const char descriptor_table_protodef_kvstore_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\rkvstore.proto\022\003KVS\"\031\n\nGetRequest\022\013\n\003ke"
-  "y\030\001 \002(\003\"(\n\nPutRequest\022\013\n\003key\030\001 \002(\003\022\r\n\005va"
-  "lue\030\002 \002(\t\"\031\n\nDelRequest\022\013\n\003key\030\001 \002(\003\"P\n\017"
-  "KVStoreResponse\022\017\n\007success\030\001 \002(\010\022\013\n\003key\030"
-  "\002 \001(\003\022\r\n\005value\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t2\232"
-  "\001\n\016KVStoreService\022,\n\003get\022\017.KVS.GetReques"
-  "t\032\024.KVS.KVStoreResponse\022,\n\003put\022\017.KVS.Put"
-  "Request\032\024.KVS.KVStoreResponse\022,\n\003del\022\017.K"
-  "VS.DelRequest\032\024.KVS.KVStoreResponseB\003\200\001\001"
-  ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_kvstore_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_kvstore_2eproto_sccs[4] = {
-  &scc_info_DelRequest_kvstore_2eproto.base,
-  &scc_info_GetRequest_kvstore_2eproto.base,
-  &scc_info_KVStoreResponse_kvstore_2eproto.base,
-  &scc_info_PutRequest_kvstore_2eproto.base,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_kvstore_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_kvstore_2eproto = {
-  false, false, descriptor_table_protodef_kvstore_2eproto, "kvstore.proto", 360,
-  &descriptor_table_kvstore_2eproto_once, descriptor_table_kvstore_2eproto_sccs, descriptor_table_kvstore_2eproto_deps, 4, 0,
-  schemas, file_default_instances, TableStruct_kvstore_2eproto::offsets,
-  file_level_metadata_kvstore_2eproto, 4, file_level_enum_descriptors_kvstore_2eproto, file_level_service_descriptors_kvstore_2eproto,
-};
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  AssignDescriptors(
+      "kvstore.proto", schemas, file_default_instances, TableStruct::offsets,
+      file_level_metadata, NULL, file_level_service_descriptors);
+}
 
-// Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_kvstore_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_kvstore_2eproto)), true);
+void protobuf_AssignDescriptorsOnce() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
+}
+
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
+void protobuf_RegisterTypes(const ::std::string&) {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 4);
+}
+
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+      "\n\rkvstore.proto\022\003KVS\"\031\n\nGetRequest\022\013\n\003ke"
+      "y\030\001 \002(\003\"(\n\nPutRequest\022\013\n\003key\030\001 \002(\003\022\r\n\005va"
+      "lue\030\002 \002(\t\"\031\n\nDelRequest\022\013\n\003key\030\001 \002(\003\"P\n\017"
+      "KVStoreResponse\022\017\n\007success\030\001 \002(\010\022\013\n\003key\030"
+      "\002 \001(\003\022\r\n\005value\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t2\232"
+      "\001\n\016KVStoreService\022,\n\003get\022\017.KVS.GetReques"
+      "t\032\024.KVS.KVStoreResponse\022,\n\003put\022\017.KVS.Put"
+      "Request\032\024.KVS.KVStoreResponse\022,\n\003del\022\017.K"
+      "VS.DelRequest\032\024.KVS.KVStoreResponseB\003\200\001\001"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 360);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "kvstore.proto", &protobuf_RegisterTypes);
+}
+
+void AddDescriptors() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+}
+// Force AddDescriptors() to be called at dynamic initialization time.
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
+  }
+} static_descriptor_initializer;
+}  // namespace protobuf_kvstore_2eproto
 namespace KVS {
 
 // ===================================================================
 
 void GetRequest::InitAsDefaultInstance() {
 }
-class GetRequest::_Internal {
- public:
-  using HasBits = decltype(std::declval<GetRequest>()._has_bits_);
-  static void set_has_key(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
-  }
-};
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int GetRequest::kKeyFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-GetRequest::GetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+GetRequest::GetRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_kvstore_2eproto::scc_info_GetRequest.base);
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:KVS.GetRequest)
+  // @@protoc_insertion_point(constructor:KVS.GetRequest)
 }
 GetRequest::GetRequest(const GetRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   key_ = from.key_;
   // @@protoc_insertion_point(copy_constructor:KVS.GetRequest)
 }
 
 void GetRequest::SharedCtor() {
-  key_ = PROTOBUF_LONGLONG(0);
+  key_ = GOOGLE_LONGLONG(0);
 }
 
 GetRequest::~GetRequest() {
   // @@protoc_insertion_point(destructor:KVS.GetRequest)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void GetRequest::ArenaDtor(void* object) {
-  GetRequest* _this = reinterpret_cast< GetRequest* >(object);
-  (void)_this;
-}
-void GetRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void GetRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* GetRequest::descriptor() {
+  ::protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_kvstore_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
 const GetRequest& GetRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetRequest_kvstore_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&protobuf_kvstore_2eproto::scc_info_GetRequest.base);
   return *internal_default_instance();
 }
 
 
 void GetRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:KVS.GetRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  key_ = PROTOBUF_LONGLONG(0);
+  key_ = GOOGLE_LONGLONG(0);
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* GetRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
+bool GetRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:KVS.GetRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // required int64 key = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          _Internal::set_has_key(&has_bits);
-          key_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_key();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &key_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
+        if (tag == 0) {
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
       }
-    }  // switch
-  }  // while
+    }
+  }
 success:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  // @@protoc_insertion_point(parse_success:KVS.GetRequest)
+  return true;
 failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:KVS.GetRequest)
+  return false;
+#undef DO_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GetRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:KVS.GetRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void GetRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:KVS.GetRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // required int64 key = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_key(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->key(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:KVS.GetRequest)
+}
+
+::google::protobuf::uint8* GetRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:KVS.GetRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required int64 key = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->key(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:KVS.GetRequest)
   return target;
@@ -309,34 +359,31 @@ size_t GetRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:KVS.GetRequest)
   size_t total_size = 0;
 
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
   // required int64 key = 1;
-  if (_internal_has_key()) {
+  if (has_key()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_key());
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->key());
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void GetRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void GetRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:KVS.GetRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetRequest>(
+      ::google::protobuf::internal::DynamicCastToGenerated<const GetRequest>(
           &from);
-  if (source == nullptr) {
+  if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:KVS.GetRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:KVS.GetRequest)
     MergeFrom(*source);
@@ -346,16 +393,16 @@ void GetRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void GetRequest::MergeFrom(const GetRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:KVS.GetRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_key()) {
-    _internal_set_key(from._internal_key());
+  if (from.has_key()) {
+    set_key(from.key());
   }
 }
 
-void GetRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void GetRequest::CopyFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:KVS.GetRequest)
   if (&from == this) return;
   Clear();
@@ -370,19 +417,24 @@ void GetRequest::CopyFrom(const GetRequest& from) {
 }
 
 bool GetRequest::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
   return true;
 }
 
+void GetRequest::Swap(GetRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void GetRequest::InternalSwap(GetRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   swap(key_, other->key_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetRequest::GetMetadata() const {
-  return GetMetadataStatic();
+::google::protobuf::Metadata GetRequest::GetMetadata() const {
+  protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_kvstore_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 
@@ -390,163 +442,190 @@ void GetRequest::InternalSwap(GetRequest* other) {
 
 void PutRequest::InitAsDefaultInstance() {
 }
-class PutRequest::_Internal {
- public:
-  using HasBits = decltype(std::declval<PutRequest>()._has_bits_);
-  static void set_has_key(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_value(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
-  }
-};
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PutRequest::kKeyFieldNumber;
+const int PutRequest::kValueFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-PutRequest::PutRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+PutRequest::PutRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_kvstore_2eproto::scc_info_PutRequest.base);
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:KVS.PutRequest)
+  // @@protoc_insertion_point(constructor:KVS.PutRequest)
 }
 PutRequest::PutRequest(const PutRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from._internal_has_value()) {
-    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
-      GetArena());
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_value()) {
+    value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
   key_ = from.key_;
   // @@protoc_insertion_point(copy_constructor:KVS.PutRequest)
 }
 
 void PutRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PutRequest_kvstore_2eproto.base);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  key_ = PROTOBUF_LONGLONG(0);
+  value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  key_ = GOOGLE_LONGLONG(0);
 }
 
 PutRequest::~PutRequest() {
   // @@protoc_insertion_point(destructor:KVS.PutRequest)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void PutRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void PutRequest::ArenaDtor(void* object) {
-  PutRequest* _this = reinterpret_cast< PutRequest* >(object);
-  (void)_this;
-}
-void PutRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void PutRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* PutRequest::descriptor() {
+  ::protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_kvstore_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
 const PutRequest& PutRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PutRequest_kvstore_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&protobuf_kvstore_2eproto::scc_info_PutRequest.base);
   return *internal_default_instance();
 }
 
 
 void PutRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:KVS.PutRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    value_.ClearNonDefaultToEmpty();
+    value_.ClearNonDefaultToEmptyNoArena();
   }
-  key_ = PROTOBUF_LONGLONG(0);
+  key_ = GOOGLE_LONGLONG(0);
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* PutRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
+bool PutRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:KVS.PutRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // required int64 key = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          _Internal::set_has_key(&has_bits);
-          key_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_key();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &key_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // required string value = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_value();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "KVS.PutRequest.value");
-          #endif  // !NDEBUG
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_value()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->value().data(), static_cast<int>(this->value().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "KVS.PutRequest.value");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
+        if (tag == 0) {
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
       }
-    }  // switch
-  }  // while
+    }
+  }
 success:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  // @@protoc_insertion_point(parse_success:KVS.PutRequest)
+  return true;
 failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:KVS.PutRequest)
+  return false;
+#undef DO_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PutRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:KVS.PutRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void PutRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:KVS.PutRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // required int64 key = 1;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_key(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->key(), output);
   }
 
   // required string value = 2;
   if (cached_has_bits & 0x00000001u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->value().data(), static_cast<int>(this->value().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
       "KVS.PutRequest.value");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_value(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->value(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:KVS.PutRequest)
+}
+
+::google::protobuf::uint8* PutRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:KVS.PutRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required int64 key = 1;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->key(), target);
+  }
+
+  // required string value = 2;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->value().data(), static_cast<int>(this->value().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "KVS.PutRequest.value");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->value(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:KVS.PutRequest)
   return target;
@@ -556,18 +635,18 @@ size_t PutRequest::RequiredFieldsByteSizeFallback() const {
 // @@protoc_insertion_point(required_fields_byte_size_fallback_start:KVS.PutRequest)
   size_t total_size = 0;
 
-  if (_internal_has_value()) {
+  if (has_value()) {
     // required string value = 2;
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_value());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->value());
   }
 
-  if (_internal_has_key()) {
+  if (has_key()) {
     // required int64 key = 1;
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_key());
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->key());
   }
 
   return total_size;
@@ -576,42 +655,39 @@ size_t PutRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:KVS.PutRequest)
   size_t total_size = 0;
 
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
   if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
     // required string value = 2;
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_value());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->value());
 
     // required int64 key = 1;
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_key());
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->key());
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void PutRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void PutRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:KVS.PutRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const PutRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PutRequest>(
+      ::google::protobuf::internal::DynamicCastToGenerated<const PutRequest>(
           &from);
-  if (source == nullptr) {
+  if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:KVS.PutRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:KVS.PutRequest)
     MergeFrom(*source);
@@ -621,14 +697,15 @@ void PutRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void PutRequest::MergeFrom(const PutRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:KVS.PutRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_set_value(from._internal_value());
+      set_has_value();
+      value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
     }
     if (cached_has_bits & 0x00000002u) {
       key_ = from.key_;
@@ -637,7 +714,7 @@ void PutRequest::MergeFrom(const PutRequest& from) {
   }
 }
 
-void PutRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void PutRequest::CopyFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:KVS.PutRequest)
   if (&from == this) return;
   Clear();
@@ -652,20 +729,26 @@ void PutRequest::CopyFrom(const PutRequest& from) {
 }
 
 bool PutRequest::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
   return true;
 }
 
+void PutRequest::Swap(PutRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void PutRequest::InternalSwap(PutRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.Swap(&other->value_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(key_, other->key_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PutRequest::GetMetadata() const {
-  return GetMetadataStatic();
+::google::protobuf::Metadata PutRequest::GetMetadata() const {
+  protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_kvstore_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 
@@ -673,127 +756,142 @@ void PutRequest::InternalSwap(PutRequest* other) {
 
 void DelRequest::InitAsDefaultInstance() {
 }
-class DelRequest::_Internal {
- public:
-  using HasBits = decltype(std::declval<DelRequest>()._has_bits_);
-  static void set_has_key(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
-  }
-};
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DelRequest::kKeyFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-DelRequest::DelRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+DelRequest::DelRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_kvstore_2eproto::scc_info_DelRequest.base);
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:KVS.DelRequest)
+  // @@protoc_insertion_point(constructor:KVS.DelRequest)
 }
 DelRequest::DelRequest(const DelRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   key_ = from.key_;
   // @@protoc_insertion_point(copy_constructor:KVS.DelRequest)
 }
 
 void DelRequest::SharedCtor() {
-  key_ = PROTOBUF_LONGLONG(0);
+  key_ = GOOGLE_LONGLONG(0);
 }
 
 DelRequest::~DelRequest() {
   // @@protoc_insertion_point(destructor:KVS.DelRequest)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DelRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void DelRequest::ArenaDtor(void* object) {
-  DelRequest* _this = reinterpret_cast< DelRequest* >(object);
-  (void)_this;
-}
-void DelRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DelRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* DelRequest::descriptor() {
+  ::protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_kvstore_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
 const DelRequest& DelRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DelRequest_kvstore_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&protobuf_kvstore_2eproto::scc_info_DelRequest.base);
   return *internal_default_instance();
 }
 
 
 void DelRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:KVS.DelRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  key_ = PROTOBUF_LONGLONG(0);
+  key_ = GOOGLE_LONGLONG(0);
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* DelRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
+bool DelRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:KVS.DelRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // required int64 key = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          _Internal::set_has_key(&has_bits);
-          key_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_key();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &key_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
+        if (tag == 0) {
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
       }
-    }  // switch
-  }  // while
+    }
+  }
 success:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  // @@protoc_insertion_point(parse_success:KVS.DelRequest)
+  return true;
 failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:KVS.DelRequest)
+  return false;
+#undef DO_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DelRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:KVS.DelRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void DelRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:KVS.DelRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // required int64 key = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_key(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->key(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:KVS.DelRequest)
+}
+
+::google::protobuf::uint8* DelRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:KVS.DelRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required int64 key = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->key(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:KVS.DelRequest)
   return target;
@@ -803,34 +901,31 @@ size_t DelRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:KVS.DelRequest)
   size_t total_size = 0;
 
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
   // required int64 key = 1;
-  if (_internal_has_key()) {
+  if (has_key()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_key());
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->key());
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void DelRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void DelRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:KVS.DelRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const DelRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DelRequest>(
+      ::google::protobuf::internal::DynamicCastToGenerated<const DelRequest>(
           &from);
-  if (source == nullptr) {
+  if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:KVS.DelRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:KVS.DelRequest)
     MergeFrom(*source);
@@ -840,16 +935,16 @@ void DelRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void DelRequest::MergeFrom(const DelRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:KVS.DelRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_key()) {
-    _internal_set_key(from._internal_key());
+  if (from.has_key()) {
+    set_key(from.key());
   }
 }
 
-void DelRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void DelRequest::CopyFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:KVS.DelRequest)
   if (&from == this) return;
   Clear();
@@ -864,19 +959,24 @@ void DelRequest::CopyFrom(const DelRequest& from) {
 }
 
 bool DelRequest::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
   return true;
 }
 
+void DelRequest::Swap(DelRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void DelRequest::InternalSwap(DelRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   swap(key_, other->key_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata DelRequest::GetMetadata() const {
-  return GetMetadataStatic();
+::google::protobuf::Metadata DelRequest::GetMetadata() const {
+  protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_kvstore_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 
@@ -884,45 +984,32 @@ void DelRequest::InternalSwap(DelRequest* other) {
 
 void KVStoreResponse::InitAsDefaultInstance() {
 }
-class KVStoreResponse::_Internal {
- public:
-  using HasBits = decltype(std::declval<KVStoreResponse>()._has_bits_);
-  static void set_has_success(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_key(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_value(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_redirect(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000008) ^ 0x00000008) != 0;
-  }
-};
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int KVStoreResponse::kSuccessFieldNumber;
+const int KVStoreResponse::kKeyFieldNumber;
+const int KVStoreResponse::kValueFieldNumber;
+const int KVStoreResponse::kRedirectFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-KVStoreResponse::KVStoreResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+KVStoreResponse::KVStoreResponse()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_kvstore_2eproto::scc_info_KVStoreResponse.base);
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:KVS.KVStoreResponse)
+  // @@protoc_insertion_point(constructor:KVS.KVStoreResponse)
 }
 KVStoreResponse::KVStoreResponse(const KVStoreResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from._internal_has_value()) {
-    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
-      GetArena());
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_value()) {
+    value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
-  redirect_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (from._internal_has_redirect()) {
-    redirect_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_redirect(),
-      GetArena());
+  redirect_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_redirect()) {
+    redirect_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.redirect_);
   }
   ::memcpy(&key_, &from.key_,
     static_cast<size_t>(reinterpret_cast<char*>(&success_) -
@@ -931,9 +1018,8 @@ KVStoreResponse::KVStoreResponse(const KVStoreResponse& from)
 }
 
 void KVStoreResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KVStoreResponse_kvstore_2eproto.base);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  redirect_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  redirect_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&key_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&success_) -
       reinterpret_cast<char*>(&key_)) + sizeof(success_));
@@ -942,166 +1028,228 @@ void KVStoreResponse::SharedCtor() {
 KVStoreResponse::~KVStoreResponse() {
   // @@protoc_insertion_point(destructor:KVS.KVStoreResponse)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void KVStoreResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  redirect_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  redirect_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void KVStoreResponse::ArenaDtor(void* object) {
-  KVStoreResponse* _this = reinterpret_cast< KVStoreResponse* >(object);
-  (void)_this;
-}
-void KVStoreResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void KVStoreResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* KVStoreResponse::descriptor() {
+  ::protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_kvstore_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
 const KVStoreResponse& KVStoreResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KVStoreResponse_kvstore_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&protobuf_kvstore_2eproto::scc_info_KVStoreResponse.base);
   return *internal_default_instance();
 }
 
 
 void KVStoreResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:KVS.KVStoreResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
-      value_.ClearNonDefaultToEmpty();
+      value_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      redirect_.ClearNonDefaultToEmpty();
+      redirect_.ClearNonDefaultToEmptyNoArena();
     }
   }
-  if (cached_has_bits & 0x0000000cu) {
+  if (cached_has_bits & 12u) {
     ::memset(&key_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&success_) -
         reinterpret_cast<char*>(&key_)) + sizeof(success_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* KVStoreResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
+bool KVStoreResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:KVS.KVStoreResponse)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // required bool success = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          _Internal::set_has_success(&has_bits);
-          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_success();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &success_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // optional int64 key = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          _Internal::set_has_key(&has_bits);
-          key_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          set_has_key();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &key_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // optional string value = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_value();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "KVS.KVStoreResponse.value");
-          #endif  // !NDEBUG
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_value()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->value().data(), static_cast<int>(this->value().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "KVS.KVStoreResponse.value");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // optional string redirect = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_redirect();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          #ifndef NDEBUG
-          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "KVS.KVStoreResponse.redirect");
-          #endif  // !NDEBUG
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_redirect()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->redirect().data(), static_cast<int>(this->redirect().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "KVS.KVStoreResponse.redirect");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
+        if (tag == 0) {
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
       }
-    }  // switch
-  }  // while
+    }
+  }
 success:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  // @@protoc_insertion_point(parse_success:KVS.KVStoreResponse)
+  return true;
 failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:KVS.KVStoreResponse)
+  return false;
+#undef DO_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* KVStoreResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:KVS.KVStoreResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+void KVStoreResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:KVS.KVStoreResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // required bool success = 1;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->success(), output);
   }
 
   // optional int64 key = 2;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_key(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->key(), output);
   }
 
   // optional string value = 3;
   if (cached_has_bits & 0x00000001u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->value().data(), static_cast<int>(this->value().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
       "KVS.KVStoreResponse.value");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_value(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->value(), output);
   }
 
   // optional string redirect = 4;
   if (cached_has_bits & 0x00000002u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_redirect().data(), static_cast<int>(this->_internal_redirect().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->redirect().data(), static_cast<int>(this->redirect().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
       "KVS.KVStoreResponse.redirect");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_redirect(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->redirect(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:KVS.KVStoreResponse)
+}
+
+::google::protobuf::uint8* KVStoreResponse::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:KVS.KVStoreResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required bool success = 1;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->success(), target);
+  }
+
+  // optional int64 key = 2;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->key(), target);
+  }
+
+  // optional string value = 3;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->value().data(), static_cast<int>(this->value().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "KVS.KVStoreResponse.value");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->value(), target);
+  }
+
+  // optional string redirect = 4;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->redirect().data(), static_cast<int>(this->redirect().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "KVS.KVStoreResponse.redirect");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->redirect(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:KVS.KVStoreResponse)
   return target;
@@ -1111,56 +1259,52 @@ size_t KVStoreResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:KVS.KVStoreResponse)
   size_t total_size = 0;
 
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
   // required bool success = 1;
-  if (_internal_has_success()) {
+  if (has_success()) {
     total_size += 1 + 1;
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (_has_bits_[0 / 32] & 7u) {
     // optional string value = 3;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_value()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_value());
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->value());
     }
 
     // optional string redirect = 4;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_redirect()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_redirect());
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->redirect());
     }
 
     // optional int64 key = 2;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_key()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_key());
+        ::google::protobuf::internal::WireFormatLite::Int64Size(
+          this->key());
     }
 
   }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void KVStoreResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void KVStoreResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:KVS.KVStoreResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const KVStoreResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<KVStoreResponse>(
+      ::google::protobuf::internal::DynamicCastToGenerated<const KVStoreResponse>(
           &from);
-  if (source == nullptr) {
+  if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:KVS.KVStoreResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:KVS.KVStoreResponse)
     MergeFrom(*source);
@@ -1170,17 +1314,19 @@ void KVStoreResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void KVStoreResponse::MergeFrom(const KVStoreResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:KVS.KVStoreResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_set_value(from._internal_value());
+      set_has_value();
+      value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
     }
     if (cached_has_bits & 0x00000002u) {
-      _internal_set_redirect(from._internal_redirect());
+      set_has_redirect();
+      redirect_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.redirect_);
     }
     if (cached_has_bits & 0x00000004u) {
       key_ = from.key_;
@@ -1192,7 +1338,7 @@ void KVStoreResponse::MergeFrom(const KVStoreResponse& from) {
   }
 }
 
-void KVStoreResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+void KVStoreResponse::CopyFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:KVS.KVStoreResponse)
   if (&from == this) return;
   Clear();
@@ -1207,26 +1353,29 @@ void KVStoreResponse::CopyFrom(const KVStoreResponse& from) {
 }
 
 bool KVStoreResponse::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
+  if ((_has_bits_[0] & 0x00000008) != 0x00000008) return false;
   return true;
 }
 
+void KVStoreResponse::Swap(KVStoreResponse* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void KVStoreResponse::InternalSwap(KVStoreResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  value_.Swap(&other->value_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  redirect_.Swap(&other->redirect_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(key_, other->key_);
+  swap(success_, other->success_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  redirect_.Swap(&other->redirect_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(KVStoreResponse, success_)
-      + sizeof(KVStoreResponse::success_)
-      - PROTOBUF_FIELD_OFFSET(KVStoreResponse, key_)>(
-          reinterpret_cast<char*>(&key_),
-          reinterpret_cast<char*>(&other->key_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata KVStoreResponse::GetMetadata() const {
-  return GetMetadataStatic();
+::google::protobuf::Metadata KVStoreResponse::GetMetadata() const {
+  protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_kvstore_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 
@@ -1234,16 +1383,16 @@ void KVStoreResponse::InternalSwap(KVStoreResponse* other) {
 
 KVStoreService::~KVStoreService() {}
 
-const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* KVStoreService::descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_kvstore_2eproto);
-  return file_level_service_descriptors_kvstore_2eproto[0];
+const ::google::protobuf::ServiceDescriptor* KVStoreService::descriptor() {
+  protobuf_kvstore_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_kvstore_2eproto::file_level_service_descriptors[0];
 }
 
-const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* KVStoreService::GetDescriptor() {
+const ::google::protobuf::ServiceDescriptor* KVStoreService::GetDescriptor() {
   return descriptor();
 }
 
-void KVStoreService::get(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+void KVStoreService::get(::google::protobuf::RpcController* controller,
                          const ::KVS::GetRequest*,
                          ::KVS::KVStoreResponse*,
                          ::google::protobuf::Closure* done) {
@@ -1251,7 +1400,7 @@ void KVStoreService::get(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
   done->Run();
 }
 
-void KVStoreService::put(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+void KVStoreService::put(::google::protobuf::RpcController* controller,
                          const ::KVS::PutRequest*,
                          ::KVS::KVStoreResponse*,
                          ::google::protobuf::Closure* done) {
@@ -1259,7 +1408,7 @@ void KVStoreService::put(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
   done->Run();
 }
 
-void KVStoreService::del(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+void KVStoreService::del(::google::protobuf::RpcController* controller,
                          const ::KVS::DelRequest*,
                          ::KVS::KVStoreResponse*,
                          ::google::protobuf::Closure* done) {
@@ -1267,35 +1416,29 @@ void KVStoreService::del(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
   done->Run();
 }
 
-void KVStoreService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* method,
-                             ::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                             const ::PROTOBUF_NAMESPACE_ID::Message* request,
-                             ::PROTOBUF_NAMESPACE_ID::Message* response,
+void KVStoreService::CallMethod(const ::google::protobuf::MethodDescriptor* method,
+                             ::google::protobuf::RpcController* controller,
+                             const ::google::protobuf::Message* request,
+                             ::google::protobuf::Message* response,
                              ::google::protobuf::Closure* done) {
-  GOOGLE_DCHECK_EQ(method->service(), file_level_service_descriptors_kvstore_2eproto[0]);
+  GOOGLE_DCHECK_EQ(method->service(), protobuf_kvstore_2eproto::file_level_service_descriptors[0]);
   switch(method->index()) {
     case 0:
       get(controller,
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::KVS::GetRequest*>(
-                 request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::KVS::KVStoreResponse*>(
-                 response),
+             ::google::protobuf::down_cast<const ::KVS::GetRequest*>(request),
+             ::google::protobuf::down_cast< ::KVS::KVStoreResponse*>(response),
              done);
       break;
     case 1:
       put(controller,
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::KVS::PutRequest*>(
-                 request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::KVS::KVStoreResponse*>(
-                 response),
+             ::google::protobuf::down_cast<const ::KVS::PutRequest*>(request),
+             ::google::protobuf::down_cast< ::KVS::KVStoreResponse*>(response),
              done);
       break;
     case 2:
       del(controller,
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::KVS::DelRequest*>(
-                 request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::KVS::KVStoreResponse*>(
-                 response),
+             ::google::protobuf::down_cast<const ::KVS::DelRequest*>(request),
+             ::google::protobuf::down_cast< ::KVS::KVStoreResponse*>(response),
              done);
       break;
     default:
@@ -1304,8 +1447,8 @@ void KVStoreService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor*
   }
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message& KVStoreService::GetRequestPrototype(
-    const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* method) const {
+const ::google::protobuf::Message& KVStoreService::GetRequestPrototype(
+    const ::google::protobuf::MethodDescriptor* method) const {
   GOOGLE_DCHECK_EQ(method->service(), descriptor());
   switch(method->index()) {
     case 0:
@@ -1316,13 +1459,13 @@ const ::PROTOBUF_NAMESPACE_ID::Message& KVStoreService::GetRequestPrototype(
       return ::KVS::DelRequest::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
-      return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
+      return *::google::protobuf::MessageFactory::generated_factory()
           ->GetPrototype(method->input_type());
   }
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message& KVStoreService::GetResponsePrototype(
-    const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* method) const {
+const ::google::protobuf::Message& KVStoreService::GetResponsePrototype(
+    const ::google::protobuf::MethodDescriptor* method) const {
   GOOGLE_DCHECK_EQ(method->service(), descriptor());
   switch(method->index()) {
     case 0:
@@ -1333,37 +1476,37 @@ const ::PROTOBUF_NAMESPACE_ID::Message& KVStoreService::GetResponsePrototype(
       return ::KVS::KVStoreResponse::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
-      return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
+      return *::google::protobuf::MessageFactory::generated_factory()
           ->GetPrototype(method->output_type());
   }
 }
 
-KVStoreService_Stub::KVStoreService_Stub(::PROTOBUF_NAMESPACE_ID::RpcChannel* channel)
+KVStoreService_Stub::KVStoreService_Stub(::google::protobuf::RpcChannel* channel)
   : channel_(channel), owns_channel_(false) {}
 KVStoreService_Stub::KVStoreService_Stub(
-    ::PROTOBUF_NAMESPACE_ID::RpcChannel* channel,
-    ::PROTOBUF_NAMESPACE_ID::Service::ChannelOwnership ownership)
+    ::google::protobuf::RpcChannel* channel,
+    ::google::protobuf::Service::ChannelOwnership ownership)
   : channel_(channel),
-    owns_channel_(ownership == ::PROTOBUF_NAMESPACE_ID::Service::STUB_OWNS_CHANNEL) {}
+    owns_channel_(ownership == ::google::protobuf::Service::STUB_OWNS_CHANNEL) {}
 KVStoreService_Stub::~KVStoreService_Stub() {
   if (owns_channel_) delete channel_;
 }
 
-void KVStoreService_Stub::get(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+void KVStoreService_Stub::get(::google::protobuf::RpcController* controller,
                               const ::KVS::GetRequest* request,
                               ::KVS::KVStoreResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(0),
                        controller, request, response, done);
 }
-void KVStoreService_Stub::put(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+void KVStoreService_Stub::put(::google::protobuf::RpcController* controller,
                               const ::KVS::PutRequest* request,
                               ::KVS::KVStoreResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(1),
                        controller, request, response, done);
 }
-void KVStoreService_Stub::del(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+void KVStoreService_Stub::del(::google::protobuf::RpcController* controller,
                               const ::KVS::DelRequest* request,
                               ::KVS::KVStoreResponse* response,
                               ::google::protobuf::Closure* done) {
@@ -1373,20 +1516,21 @@ void KVStoreService_Stub::del(::PROTOBUF_NAMESPACE_ID::RpcController* controller
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace KVS
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::KVS::GetRequest* Arena::CreateMaybeMessage< ::KVS::GetRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::KVS::GetRequest >(arena);
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::KVS::GetRequest* Arena::CreateMaybeMessage< ::KVS::GetRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::KVS::GetRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::KVS::PutRequest* Arena::CreateMaybeMessage< ::KVS::PutRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::KVS::PutRequest >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::KVS::PutRequest* Arena::CreateMaybeMessage< ::KVS::PutRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::KVS::PutRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::KVS::DelRequest* Arena::CreateMaybeMessage< ::KVS::DelRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::KVS::DelRequest >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::KVS::DelRequest* Arena::CreateMaybeMessage< ::KVS::DelRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::KVS::DelRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::KVS::KVStoreResponse* Arena::CreateMaybeMessage< ::KVS::KVStoreResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::KVS::KVStoreResponse >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::KVS::KVStoreResponse* Arena::CreateMaybeMessage< ::KVS::KVStoreResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::KVS::KVStoreResponse >(arena);
 }
-PROTOBUF_NAMESPACE_CLOSE
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>
